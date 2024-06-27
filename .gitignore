@@ -1,6 +1,6 @@
 *.a
 *.so
 test
-make.dir
+_make.dir
 compile_commands.json
 .cache

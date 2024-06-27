@@ -9,9 +9,9 @@ VERSION_MINOR = 0
 VERSION_MACRO = 1
 
 CFLAGS += -ggdb
-CFLAGS += -DART_MAJOR=\"${VERSION_MAJOR}\"
-CFLAGS += -DART_MINOR=\"${VERSION_MINOR}\"
-CFLAGS += -DART_MACRO=\"${VERSION_MACRO}\"
+CFLAGS += -DART_MAJOR=${VERSION_MAJOR}
+CFLAGS += -DART_MINOR=${VERSION_MINOR}
+CFLAGS += -DART_MACRO=${VERSION_MACRO}
 CFLAGS += -DBIN_NAME=\"${BIN}\" 
 CFLAGS += -DGIT_COMMIT=\"${shell git rev-parse --short HEAD}\"
 CFLAGS += -DLOG_USE_COLOR=1
@@ -24,7 +24,7 @@ CC_U = ${shell echo ${CC}-CC | sed 's/.*/\U&/'}
 LD_U = ${shell echo ${LD}-LD | sed 's/.*/\U&/'}
 AR_U = ${shell echo ${AR} | sed 's/.*/\U&/'}
 
-_MAKE_DIR = make.dir
+_MAKE_DIR = _make.dir
 SRC_DIR = src
 BUILD_DIR = ${_MAKE_DIR}/build
 
