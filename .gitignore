@@ -3,3 +3,4 @@
 test
 make.dir
 compile_commands.json
+.cache
