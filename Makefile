@@ -67,7 +67,7 @@ ${BIN}: ${OBJS}
 	@${AR} rcs lib${BIN}.a ${OBJS}
 
 
-${BUILD_DIR}/test.o: test.c | ${BUILD_DIR}
+${BUILD_DIR}/test.o: test_prog/test.c | ${BUILD_DIR}
 	@printf "\t%s  %s\n" ${CC_U} ${shell ./turn_fn.sh $<}
 	@${CC} ${CFLAGS} -c $< -o $@
 
