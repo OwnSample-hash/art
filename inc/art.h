@@ -12,10 +12,12 @@ typedef struct {
 } art_data_t;
 
 typedef struct {
-  unsigned int major;
-  unsigned int minor;
-  unsigned int macro;
+  size_t major;
+  size_t minor;
+  size_t macro;
+#ifndef ART_EXCLUDE_GIT_COMMIT_FROM_VERION_STRUCT
   char git_commit[8];
+#endif
 } art_version_t;
 
 typedef struct {
@@ -34,6 +36,9 @@ static const art_version_t art_version = {
     .major = ART_MAJOR,
     .minor = ART_MINOR,
     .macro = ART_MACRO,
+#ifndef ART_EXCLUDE_GIT_COMMIT_FROM_VERION_STRUCT
+    .git_commit = GIT_COMMIT,
+#endif
 };
 
 art_status_e create_art_handler(art_handler_t *handler);
